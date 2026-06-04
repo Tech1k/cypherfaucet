@@ -23,7 +23,7 @@ $source_url = $cfg['source_url'] ?? 'https://github.com/Tech1k/cypherfaucet';
         <meta property="og:title" content="CypherFaucet">
         <meta property="og:site_name" content="CypherFaucet">
         <meta property="og:url" content="https://cypherfaucet.com">
-        <link rel="stylesheet" type="text/css" href="/assets/style.css?v=4">
+        <link rel="stylesheet" type="text/css" href="/assets/style.css?v=6">
     </head>
     <body>
         <nav class="navbar">

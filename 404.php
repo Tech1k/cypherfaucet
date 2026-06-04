@@ -16,7 +16,7 @@ http_response_code(404);
         <meta name="robots" content="noindex, follow">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="theme-color" content="#c5c5c5">
-        <link rel="stylesheet" type="text/css" href="/assets/style.css?v=4">
+        <link rel="stylesheet" type="text/css" href="/assets/style.css?v=6">
     </head>
     <body>
         <nav class="navbar">

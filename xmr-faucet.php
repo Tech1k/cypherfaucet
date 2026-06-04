@@ -637,12 +637,12 @@ $height_display = "<span style=\"color: {$dot};\">&#9679;</span> " . $height_dis
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="theme-color" content="#c5c5c5">
         <link rel="canonical" href="<?php echo $canonical; ?>" />
-        <link rel="stylesheet" type="text/css" href="/assets/style.css?v=4">
+        <link rel="stylesheet" type="text/css" href="/assets/style.css?v=6">
         <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
         <style>
             strong {
-                color: #9d9d9d;
+                color: #d4d4d4;
             }
             .mono {
                 font-family: monospace;
@@ -702,17 +702,22 @@ $height_display = "<span style=\"color: {$dot};\">&#9679;</span> " . $height_dis
             <?php echo $active_err; ?>
 
             <div style="<?php echo $display_form; ?>">
-                <form method="post" action="">
-                    <div class="forminput-wrapper">
-                        <input class="forminput" id="address" name="address" aria-label="Monero <?php echo $net_label; ?> address" type="text" value="" placeholder="Your Monero <?php echo $net_label; ?> address (<?php echo $address_hint; ?>)" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" required />
-                        <span class="icon-left">
-                            <img src="/assets/images/monero.png" alt="Monero <?php echo $net_label; ?>" />
-                        </span>
+                <div class="card">
+                    <div class="card-header"><b>Claim <?php echo $currency; ?></b></div>
+                    <div class="card-body">
+                        <form method="post" action="">
+                            <div class="forminput-wrapper">
+                                <input class="forminput" id="address" name="address" aria-label="Monero <?php echo $net_label; ?> address" type="text" value="" placeholder="Your Monero <?php echo $net_label; ?> address (<?php echo $address_hint; ?>)" autocomplete="off" autocapitalize="none" autocorrect="off" spellcheck="false" required />
+                                <span class="icon-left">
+                                    <img src="/assets/images/monero.png" alt="Monero <?php echo $net_label; ?>" />
+                                </span>
+                            </div>
+                            <span style="display: inline-block; margin-top: 8px; font-size: 0.9em;">IP addresses are logged only to prevent faucet abuse.</span>
+                            <div class="cf-turnstile" style="margin-top: 12px; margin-bottom: 12px;" data-sitekey="<?php echo TURNSTILE_SITEKEY; ?>" data-theme="dark"></div>
+                            <input type="submit" id="send" name="claim" class="formbtn" value="Send <?php echo $currency; ?>" />
+                        </form>
                     </div>
-                    <span style="margin-top: 5px; display: inline-block;">IP addresses are logged only to prevent faucet abuse.</span>
-                    <div class="cf-turnstile" style="margin-top: 10px; margin-bottom: 10px;" data-sitekey="<?php echo TURNSTILE_SITEKEY; ?>" data-theme="dark"></div>
-                    <input type="submit" id="send" name="claim" class="formbtn" value="Send <?php echo $currency; ?>" />
-                </form>
+                </div>
             </div>
 
 <?php if ($donate_addr !== '') { ?>
