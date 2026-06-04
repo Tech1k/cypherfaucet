@@ -650,10 +650,19 @@ $height_display = "<span style=\"color: {$dot};\">&#9679;</span> " . $height_dis
             }
             .copybtn {
                 font-size: 12px;
-                padding: 2px 8px;
-                margin-left: 4px;
+                padding: 3px 10px;
+                margin-left: 6px;
                 cursor: pointer;
                 vertical-align: middle;
+                color: #d4d4d4;
+                background-color: transparent;
+                border: 1px solid #5b6168;
+                border-radius: 4px;
+                transition: background-color 0.15s ease, border-color 0.15s ease;
+            }
+            .copybtn:hover {
+                background-color: #3a3f44;
+                border-color: #7a8189;
             }
         </style>
     </head>
