@@ -1,0 +1,19 @@
+# SQLite faucet database. Contains claimer IP addresses (PII). Never commit.
+db/*.db
+db/*.db-journal
+db/*.db-wal
+db/*.db-shm
+
+# Balance / sync-status caches written next to the DB
+db/.balance_cache_*.json
+db/.height_cache_*.json
+
+# Secrets / local config
+config.php
+
+# Logs
+*.log
+
+# Python bytecode cache
+__pycache__/
+*.pyc

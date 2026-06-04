@@ -1,0 +1,6 @@
+# Block all direct web access to the database directory: the SQLite file
+# (claimer IPs), the init/cleanup scripts, and the caches all live here.
+# Return 404 (not 403) so the files' existence isn't confirmed. This is
+# defense-in-depth; ideally FAUCET_DB points outside the webroot.
+RewriteEngine On
+RewriteRule ^ - [L,R=404]
