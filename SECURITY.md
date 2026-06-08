@@ -5,7 +5,7 @@
 Please report security issues privately. Do not open a public issue.
 
 Email **hello@tech1k.com**. For sensitive reports, encrypt to PGP key
-`5146 46C0 A0FE 2B8A EA84 828A 0C30 342A 9D40 39BD`
+`D62A E4C5 3E95 2FDC 967C 0A65 5E51 FE48 287E ED4B`
 (key: <https://cypherfaucet.com/tech1k.txt>).
 
 Please include steps to reproduce and the impact. I will acknowledge within a

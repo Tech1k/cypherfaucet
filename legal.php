@@ -16,9 +16,11 @@ $source_url = $cfg['source_url'] ?? 'https://github.com/Tech1k/cypherfaucet';
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="theme-color" content="#c5c5c5">
         <link rel="canonical" href="https://cypherfaucet.com/legal" />
-        <meta property="og:image" content="/assets/images/cypherfaucet-banner.png">
-        <meta property="og:image:width" content="955">
-        <meta property="og:image:height" content="500">
+        <meta property="og:image" content="https://cypherfaucet.com/assets/images/og-banner.png">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="https://cypherfaucet.com/assets/images/og-banner.png">
         <meta property="og:description" content="CypherFaucet Terms and Privacy Policy.">
         <meta property="og:title" content="CypherFaucet | Legal">
         <meta property="og:site_name" content="CypherFaucet">

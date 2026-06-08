@@ -637,6 +637,16 @@ $height_display = "<span style=\"color: {$dot};\">&#9679;</span> " . $height_dis
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="theme-color" content="#c5c5c5">
         <link rel="canonical" href="<?php echo $canonical; ?>" />
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="CypherFaucet">
+        <meta property="og:title" content="CypherFaucet | Monero <?php echo $net_label; ?> Faucet (<?php echo $currency; ?>)">
+        <meta property="og:description" content="Developer friendly Monero <?php echo strtolower($net_label); ?> faucet. Providing developers free <?php echo strtolower($net_label); ?> coins since 2025.">
+        <meta property="og:url" content="https://cypherfaucet.com<?php echo $canonical; ?>">
+        <meta property="og:image" content="https://cypherfaucet.com/assets/images/og-banner.png">
+        <meta property="og:image:width" content="1200">
+        <meta property="og:image:height" content="630">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="https://cypherfaucet.com/assets/images/og-banner.png">
         <link rel="stylesheet" type="text/css" href="/assets/style.css?v=8">
         <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
