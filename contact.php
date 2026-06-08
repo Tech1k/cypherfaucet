@@ -51,23 +51,23 @@ $source_url = $cfg['source_url'] ?? 'https://github.com/Tech1k/cypherfaucet';
             <div>
                 <p>Feel free to reach out with any inquires such as issues, questions, or suggestions.</p>
                 <div style="margin-bottom: 10px;">Email: <a href="mailto:hello@tech1k.com">hello@tech1k.com</a></div>
-                <div style="margin-bottom: 10px;">PGP Fingerprint: <code>5146 46C0 A0FE 2B8A EA84 828A 0C30 342A 9D40 39BD</code></div>
+                <div style="margin-bottom: 10px;">PGP Fingerprint: <code>D62A E4C5 3E95 2FDC 967C 0A65 5E51 FE48 287E ED4B</code></div>
                 <div style="margin-bottom: 10px;">PGP Key File: <a href="/tech1k.txt">tech1k.txt</a></div>
                 <div>PGP Key:<br/>
                 <code>
-                    -----BEGIN PGP PUBLIC KEY BLOCK-----
-                    <br/><br/>
-                    mDMEZ/9jxxYJKwYBBAHaRw8BAQdA0QGWglE0VLF5LWWlR/5gNgZZZYrUStzKqr3s<br/>
-                    /XjxGSO0GVRlY2gxayA8aGVsbG9AdGVjaDFrLmNvbT6ImQQTFgoAQRYhBCUhizTS<br/>
-                    3sd26ckpkd+CqUGsaxwpBQJn/2PHAhsDBQkFpXhZBQsJCAcCAiICBhUKCQgLAgQW<br/>
-                    AgMBAh4HAheAAAoJEN+CqUGsaxwpr2MBANK/OxV3xA7YpD6zLDLMkgLye7Jdubzc<br/>
-                    9K2xESi2S6rJAQC+15xR2eBI3qiQ/mJbRQHAhivXfmDRkqXRPofaQG4TBrg4BGf/<br/>
-                    Y8cSCisGAQQBl1UBBQEBB0BxU25wK2YPQZGv54SHVophNtHaBfziKAu3QAUKXO/D<br/>
-                    WQMBCAeIfgQYFgoAJhYhBCUhizTS3sd26ckpkd+CqUGsaxwpBQJn/2PHAhsMBQkF<br/>
-                    pXhZAAoJEN+CqUGsaxwp1HoA/0BjNE17jC/5BpvKxMDwz7bcDXx2aotOqrYZz8bK<br/>
-                    /qN2APsGCx01qTkqyWWeOwu0eyLj+nwj2VW0eo9UOR3H39TOCA==<br/>
-                    =o3/c<br/>
-                    -----END PGP PUBLIC KEY BLOCK-----
+                -----BEGIN PGP PUBLIC KEY BLOCK-----
+                <br/><br/>
+                mDMEaiS1MBYJKwYBBAHaRw8BAQdAeW6l1NKkJ/oPOqZIBnl9PcRAWAs2KRJLYA04<br/>
+                yq8tBzO0GVRlY2gxayA8aGVsbG9AdGVjaDFrLmNvbT6ImQQTFgoAQRYhBNYq5MU+<br/>
+                lS/clnwKZV5R/kgofu1LBQJqJLUwAhsDBQkFpJbwBQsJCAcCAiICBhUKCQgLAgQW<br/>
+                AgMBAh4HAheAAAoJEF5R/kgofu1L0SYA/RvstakXgEaUyyh867ehNNzPBAa+qr9W<br/>
+                iIiL67xmf5/QAQDzfkQs4M9AEFH9NFrXUUlyE9EaNb+ak/keUWlNyfrKA7g4BGok<br/>
+                tTASCisGAQQBl1UBBQEBB0BXqSOypMHpPtEB5Y6hWLBOViWqbqK7hMKk8sNlEysF<br/>
+                LwMBCAeIfgQYFgoAJhYhBNYq5MU+lS/clnwKZV5R/kgofu1LBQJqJLUwAhsMBQkF<br/>
+                pJbwAAoJEF5R/kgofu1LcNABAI3dTDmnq7jAAK0EqXeb7wHy+HBVWKm+ZAdo3M9r<br/>
+                wJviAQCLMZhf8gS+rNPef1oVR8i+UJlhiyJWIg2X9o9YEFMPCA==<br/>
+                =DMDG<br/>
+                -----END PGP PUBLIC KEY BLOCK-----
                 </code>
                 </div>
                 <br/>
