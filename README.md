@@ -148,8 +148,11 @@ start a second run while one is still active, so no lock file is needed here.)
   reachable, unauthenticated wallet RPC can be drained directly.
 - On SELinux systems (Fedora/RHEL), the DB directory needs the
   `httpd_sys_rw_content_t` context for Apache to write it.
-- Only `CF-Connecting-IP` and `REMOTE_ADDR` are trusted for rate limiting;
-  client-supplied forwarding headers are ignored.
+- Rate limiting trusts `CF-Connecting-IP` (falling back to `REMOTE_ADDR`);
+  `X-Forwarded-For` / `Client-IP` are ignored. For that header to be
+  unspoofable, the origin must only be reachable through Cloudflare: firewall it
+  to Cloudflare's IP ranges (https://www.cloudflare.com/ips) and/or enable
+  Authenticated Origin Pulls. Otherwise a direct-to-origin request can forge it.
 
 ## License
 
@@ -166,5 +169,14 @@ PARTICULAR PURPOSE. See the GNU Affero General Public License for more details.
 
 You should have received a copy of the GNU Affero General Public License along
 with this program. If not, see <https://www.gnu.org/licenses/>.
+
+### Forking
+
+If you run your own instance, change the operator-specific bits (they're
+hardcoded, not in config): the domain in the `canonical` / `og:` / `twitter:`
+meta and in `sitemap.xml` / `robots.txt`, the footer attribution, the operator
+and contact details in `legal.php`, and the PGP identity in `contact.php`,
+`SECURITY.md`, and `tech1k.txt`. Secrets, RPC creds, and donation addresses are
+already in `config.php`.
 
 Issues and pull requests are welcome.

@@ -103,23 +103,22 @@ $active_err   = "";
 // ---- Helpers ------------------------------------------------------------
 
 /**
- * Resolve the client IP for rate limiting.
+ * Resolve the client IP for rate limiting: the real visitor IP from
+ * CF-Connecting-IP, falling back to REMOTE_ADDR. X-Forwarded-For / Client-IP
+ * are never trusted (attacker-controlled).
  *
- * Behind Cloudflare, CF-Connecting-IP is set by Cloudflare and cannot be
- * forged by the client (CF overwrites any incoming value). We do NOT trust
- * X-Forwarded-For / Client-IP, since those are attacker-controlled and would
- * let anyone reset their per-IP bucket just by sending a header.
- *
- * For full assurance also verify REMOTE_ADDR is within Cloudflare's published
- * IP ranges (and/or enable Authenticated Origin Pulls) so the CF header is
- * only honoured on requests that actually came through Cloudflare.
+ * CF-Connecting-IP is only unforgeable for requests that actually transit
+ * Cloudflare. So the origin MUST be reachable only THROUGH Cloudflare: firewall
+ * it to Cloudflare's IP ranges (https://www.cloudflare.com/ips) and/or enable
+ * Authenticated Origin Pulls. Otherwise an attacker hitting the origin directly
+ * can spoof this header. (mod_remoteip, scoped to the Cloudflare ranges, is the
+ * Apache-native alternative; then this can just read REMOTE_ADDR.)
  */
 function resolve_client_ip(): string
 {
-    if (!empty($_SERVER['HTTP_CF_CONNECTING_IP'])) {
-        return $_SERVER['HTTP_CF_CONNECTING_IP'];
-    }
-    return $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
+    return !empty($_SERVER['HTTP_CF_CONNECTING_IP'])
+        ? $_SERVER['HTTP_CF_CONNECTING_IP']
+        : ($_SERVER['REMOTE_ADDR'] ?? '0.0.0.0');
 }
 
 /**
@@ -426,7 +425,7 @@ if ($bal === null) {
                         $next->modify('+1 hour');
                         $formatted = $next->format('n/j/Y \a\t g:i:s A') . ' UTC';
                         $active_err = card('alert', ' alertborder', 'Error - Already Claimed',
-                            "<p>It seems that you have already claimed from the faucet once within the last hour. Please try again later or <a href=\"/contact\" id=\"site_link\"><b>contact us</b></a> if you think this is an error.<br/><br/>You may claim again on <span class=\"utc_next\">{$formatted}</span></p>");
+                            "<p>It seems that you have already claimed from the faucet once within the last hour. Please try again later or <a href=\"/contact\" class=\"site_link\"><b>contact us</b></a> if you think this is an error.<br/><br/>You may claim again on <span class=\"utc_next\">{$formatted}</span></p>");
                     } elseif ($reservationId !== null) {
                         // ---- Send ---------------------------------------
                         // Omit ring_size so the wallet uses the consensus
@@ -481,7 +480,7 @@ if ($bal === null) {
 
                             if ($explorer_tx !== '') {
                                 $explorer_safe = htmlspecialchars($explorer_tx, ENT_QUOTES, 'UTF-8');
-                                $body .= "<a href=\"{$explorer_safe}{$txid_safe}\" target=\"_blank\" rel=\"noopener\" id=\"site_link\" class=\"mono\">{$txid_safe}</a>"
+                                $body .= "<a href=\"{$explorer_safe}{$txid_safe}\" target=\"_blank\" rel=\"noopener\" class=\"site_link\" class=\"mono\">{$txid_safe}</a>"
                                        . "<br/><br/><span>It may take a minute for the transaction to show up on the explorer.</span>";
                             } else {
                                 $body .= "<code class=\"mono\">{$txid_safe}</code>";
@@ -636,7 +635,7 @@ $height_display = "<span style=\"color: {$dot};\">&#9679;</span> " . $height_dis
         <meta name="robots" content="index, follow">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="theme-color" content="#c5c5c5">
-        <link rel="canonical" href="<?php echo $canonical; ?>" />
+        <link rel="canonical" href="https://cypherfaucet.com<?php echo $canonical; ?>" />
         <meta property="og:type" content="website">
         <meta property="og:site_name" content="CypherFaucet">
         <meta property="og:title" content="CypherFaucet | Monero <?php echo $net_label; ?> Faucet (<?php echo $currency; ?>)">
@@ -647,7 +646,7 @@ $height_display = "<span style=\"color: {$dot};\">&#9679;</span> " . $height_dis
         <meta property="og:image:height" content="630">
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:image" content="https://cypherfaucet.com/assets/images/og-banner.png">
-        <link rel="stylesheet" type="text/css" href="/assets/style.css?v=8">
+        <link rel="stylesheet" type="text/css" href="/assets/style.css?v=9">
         <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
         <style>
@@ -753,7 +752,7 @@ $height_display = "<span style=\"color: {$dot};\">&#9679;</span> " . $height_dis
                 <div class="card-header">FAQs</div>
                 <div class="card-body">
                     <h3>How do I use the faucet?</h3>
-                    <p>To use the faucet, enter your Monero <?php echo strtolower($net_label); ?> wallet address, complete the captcha, and click "Send <?php echo $currency; ?>". By using the faucet you agree to our <a href="/legal#terms" id="site_link"><b>Terms and Conditions</b></a>.</p>
+                    <p>To use the faucet, enter your Monero <?php echo strtolower($net_label); ?> wallet address, complete the captcha, and click "Send <?php echo $currency; ?>". By using the faucet you agree to our <a href="/legal#terms" class="site_link"><b>Terms and Conditions</b></a>.</p>
                     <h3>What is the Monero <?php echo strtolower($net_label); ?>?</h3>
                     <p>The Monero <?php echo strtolower($net_label); ?> is a separate network which allows developers to test Monero in place of its mainnet counterpart without the need to use coins that have value.</p>
                     <h3>Why don't I see the coins in my wallet or on the explorer?</h3>
@@ -772,7 +771,7 @@ $height_display = "<span style=\"color: {$dot};\">&#9679;</span> " . $height_dis
             <br/>
             <footer>
                 <hr style="width: 17.5%;"/>
-                <p style="text-align: center; font-size: 18px;">Established May 5, 2025.<br/>Made with &#9829;&#65039; and &#9749; by <a href="https://tech1k.com" target="_blank" rel="noopener"><b>Tech1k</b></a> &middot; <a href="<?php echo htmlspecialchars($source_url, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener">Source</a></p>
+                <p style="text-align: center; font-size: 18px;">Established May 5, 2025.<br/>Made with ♥️ and ☕ by <a href="https://tech1k.com" target="_blank" rel="noopener"><strong>Tech1k</strong></a> &middot; <a href="<?php echo htmlspecialchars($source_url, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener">Source</a></p>
             </footer>
         </div>
         <script>

@@ -25,7 +25,7 @@ $source_url = $cfg['source_url'] ?? 'https://github.com/Tech1k/cypherfaucet';
         <meta property="og:title" content="CypherFaucet">
         <meta property="og:site_name" content="CypherFaucet">
         <meta property="og:url" content="https://cypherfaucet.com">
-        <link rel="stylesheet" type="text/css" href="/assets/style.css?v=8">
+        <link rel="stylesheet" type="text/css" href="/assets/style.css?v=9">
     </head>
     <body>
         <nav class="navbar">
@@ -61,7 +61,7 @@ $source_url = $cfg['source_url'] ?? 'https://github.com/Tech1k/cypherfaucet';
 
             <div style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
                 <div style="display: flex; align-items: center; margin-top: 10px;">
-                    <img src="/assets/images/monero.png" width="32px" style="margin-right: 8px;">
+                    <img src="/assets/images/monero.png" width="32px" style="margin-right: 8px;" alt="Monero">
                     <div>
                         <a href="/xmr-stagenet" style="text-decoration: none; font-size: 18px;">Monero Stagenet Faucet</a><br>
                         <small style="font-size: 15px;">Get 0.01 sXMR every hour</small>
@@ -69,7 +69,7 @@ $source_url = $cfg['source_url'] ?? 'https://github.com/Tech1k/cypherfaucet';
                 </div>
 
                 <div style="display: flex; align-items: center; margin-top: 10px;">
-                    <img src="/assets/images/monero.png" width="32px" style="margin-right: 8px;">
+                    <img src="/assets/images/monero.png" width="32px" style="margin-right: 8px;" alt="Monero">
                     <div>
                         <a href="/xmr-testnet" style="text-decoration: none; font-size: 18px;">Monero Testnet Faucet</a><br>
                         <small style="font-size: 15px;">Get 0.01 tXMR every hour</small>

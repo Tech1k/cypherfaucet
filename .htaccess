@@ -18,7 +18,7 @@ ErrorDocument 404 /404.php
 # existence isn't even confirmed. Covers dotfiles (.git, .gitignore, .ht*, the
 # balance/height caches), the database directory, and the repo metadata files.
 RewriteRule (^|/)\.(?!well-known/) - [L,R=404]
-RewriteRule ^(db|tools)/ - [L,R=404]
+RewriteRule ^(db|tools)(/|$) - [L,R=404]
 RewriteRule ^(config\.php|config\.example\.php|LICENSE|README\.md|SECURITY\.md)$ - [L,R=404]
 
 # Litecoin testnet faucet retired (May 2026). Send old/listed links home.
@@ -29,16 +29,9 @@ RewriteRule ^ltc-testnet(\.php)?/?$ / [R=301,L]
 RewriteRule ^xmr-stagenet/?$ xmr-faucet.php?net=stagenet [L]
 RewriteRule ^xmr-testnet/?$  xmr-faucet.php?net=testnet  [L]
 
-# Strip .html/.php from direct requests only. The REDIRECT_STATUS guard keeps
-# these from firing on internal error subrequests (e.g. the 404 ErrorDocument),
-# which would otherwise turn a blocked /config.php into a 301 to /config.
-RewriteCond %{ENV:REDIRECT_STATUS} ^$
-RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
-RewriteRule ^ /%1 [NC,L,R]
-
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^ %{REQUEST_URI}.html [NC,L]
-
+# Strip .php from direct requests only. The REDIRECT_STATUS guard keeps this
+# from firing on internal error subrequests (e.g. the 404 ErrorDocument), which
+# would otherwise turn a blocked /config.php into a 301 to /config.
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteCond %{THE_REQUEST} /([^.]+)\.php [NC]
 RewriteRule ^ /%1 [NC,L,R]

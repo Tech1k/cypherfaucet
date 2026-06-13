@@ -143,7 +143,7 @@ def main():
     elif args.count is not None:
         count = args.count
     else:
-        count = int(args.total // args.amount)
+        count = int(round(args.total * ATOMIC)) // amount_atomic
 
     if count <= 0:
         sys.exit("Nothing to send (resolved to 0 outputs).")

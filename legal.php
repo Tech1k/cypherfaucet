@@ -25,7 +25,7 @@ $source_url = $cfg['source_url'] ?? 'https://github.com/Tech1k/cypherfaucet';
         <meta property="og:title" content="CypherFaucet | Legal">
         <meta property="og:site_name" content="CypherFaucet">
         <meta property="og:url" content="https://cypherfaucet.com/legal">
-        <link rel="stylesheet" type="text/css" href="/assets/style.css?v=8">
+        <link rel="stylesheet" type="text/css" href="/assets/style.css?v=9">
     </head>
     <body>
         <nav class="navbar">
@@ -67,7 +67,7 @@ $source_url = $cfg['source_url'] ?? 'https://github.com/Tech1k/cypherfaucet';
                 <h2>Intellectual Property</h2>
                 <p>The content and materials available on the Site, including but not limited to text, graphics, images, logos, and software, are the property of CypherFaucet or its licensors and are protected by copyright, trademark, and other intellectual property laws. You may not use, reproduce, modify, or distribute the content without our written permission.</p>
                 <h2>Privacy</h2>
-                <p>Your use of the Site is subject to our Privacy Policy, which can be found <a href="/legal#privacy" id="site_link">here</a>. By using the Site, you consent to the collection, use, and disclosure of information as described in the Privacy Policy.</p>
+                <p>Your use of the Site is subject to our Privacy Policy, which can be found <a href="/legal#privacy" class="site_link">here</a>. By using the Site, you consent to the collection, use, and disclosure of information as described in the Privacy Policy.</p>
                 <h2>Prohibition of bots and other means of claim automation</h2>
                 <p>Users are strictly prohibited from using bots, scripts, or any automated means to make claims from the faucet. CypherFaucet is intended for use by genuine human users only, aimed at facilitating legitimate testing and development activities. Any attempts to automate the claiming process or engage in fraudulent activities will result in immediate suspension of access to the faucet.</p>
                 <p>We value fair distribution and authentic engagement with our faucet. All users are required to manually make claims, adhering to the specified claim intervals and completing any necessary verification steps.</p>
@@ -80,7 +80,7 @@ $source_url = $cfg['source_url'] ?? 'https://github.com/Tech1k/cypherfaucet';
                 <h2>Changes to This Terms and Conditions</h2>
                 <p>These Terms and Conditions are effective as of June 1, 2026 and we reserve the right to update or change these Terms and Conditions at any time. When we do so, we will revise the "Last updated" date at the top of this page. Your continued use of our website or services after we post any modifications to these Terms of Service will constitute your acknowledgment of the modifications and your consent to abide and be bound by the modified Terms. If we make any material changes to the Terms, we will provide prominent notice on our website.</p>
                 <h2>Contact Us</h2>
-                <p>If you have any questions about these Terms and Conditions, please contact us <a href="/contact" id="site_link">here</a>.</p>
+                <p>If you have any questions about these Terms and Conditions, please contact us <a href="/contact" class="site_link">here</a>.</p>
                 <p>Thank you for using CypherFaucet!</p>
             </section>
             <hr/>
@@ -116,12 +116,12 @@ $source_url = $cfg['source_url'] ?? 'https://github.com/Tech1k/cypherfaucet';
                 <h2>Your Rights</h2>
                 <p>You can request access to or deletion of the limited data we hold about your claims by contacting us. Because claim records are deleted automatically after 7 days, most data is removed without any action on your part.</p>
                 <h2>Data Controller</h2>
-                <p>The Site is operated by Tech1k. For any privacy request or question, contact us <a href="/contact" id="site_link">here</a>.</p>
+                <p>The Site is operated by Tech1k. For any privacy request or question, contact us <a href="/contact" class="site_link">here</a>.</p>
                 <h2>Changes to This Privacy Policy</h2>
                 <p>This Privacy Policy is effective as of June 1, 2026 and will remain in effect except with respect to any changes in its provisions in the future, which will be in effect immediately after being posted on this page.</p>
                 <p>We reserve the right to update or change our Privacy Policy at any time, and you should check this Privacy Policy periodically. Your continued use of the Service after we post any modifications to the Privacy Policy on this page will constitute your acknowledgment of the modifications and your consent to abide and be bound by the modified Privacy Policy.</p>
                 <h2>Contact Us</h2>
-                <p>If you have any questions about this Privacy Policy, please contact us <a href="/contact" id="site_link">here</a>.</p>
+                <p>If you have any questions about this Privacy Policy, please contact us <a href="/contact" class="site_link">here</a>.</p>
                 <p>Thank you for using CypherFaucet!</p>
             </section>
             <footer>

@@ -16,7 +16,7 @@ http_response_code(404);
         <meta name="robots" content="noindex, follow">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="theme-color" content="#c5c5c5">
-        <link rel="stylesheet" type="text/css" href="/assets/style.css?v=8">
+        <link rel="stylesheet" type="text/css" href="/assets/style.css?v=9">
     </head>
     <body>
         <nav class="navbar">
@@ -45,7 +45,7 @@ http_response_code(404);
                 <br/>
                 <span style="font-size: 22px;">Page not found.</span>
                 <br/><br/>
-                <a href="/" id="site_link">Return to the homepage</a>
+                <a href="/" class="site_link">Return to the homepage</a>
             </p>
             <br/><br/><br/><br/><br/>
             <footer>
